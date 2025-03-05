@@ -1,0 +1,25 @@
+{% extends 'webapp/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+    {% if lenders %}
+        {% for lender in lenders %}
+
+            <div class="bg-customGray p-4">
+                Name of Lender: {{lender.borrower_name}}
+            </div>
+
+            <div class="bg-customOrange p-4">
+                Loan Program: {{lender.loan_type}}
+            </div>
+
+            <br>
+
+        {% endfor %}
+    {% endif %}
+
+    <a href="{% url 'dashboard' %}" class="mt-4 bg-red-500 text-white py-2 px-4 rounded">Back</a>
+
+{% endblock %}

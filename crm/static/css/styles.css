@@ -1,0 +1,22 @@
+.inline-checkbox {
+    display: inline-block;
+    margin-right: 10px; /* Adjust the spacing as needed */
+}
+
+.checkbox-inline label {
+    display: inline-block;
+    margin-left: 5px; /* Adjust the spacing as needed */
+}
+
+.bg-customGray{
+    background-color: #d2d2d2 !important;
+}
+
+.bg-customOrange{
+    background-color: #f9e1d4 !important;
+}
+
+.bg-customWhite{
+    background-color: #f8f9f8 !important;
+}
+

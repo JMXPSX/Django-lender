@@ -1,0 +1,187 @@
+{% extends 'webapp/base.html' %}
+
+{% load crispy_forms_tags %}
+{% load custom_filters %}
+
+{% block content %}
+
+        {% comment %} <form id="my-form" hx-post="{% url '' %}" hx-target="#form-container" hx-swap="outerHTML"> {% endcomment %}
+        
+        <form method="POST" autocomplete="off">
+            {% csrf_token %}
+            
+            <div class="grid grid-cols-4 gap-4">
+                <div class="checkbox-inline pt-8">                     
+                    {{form.correspondent|as_crispy_field}}
+                </div>
+                <div>
+                    {% comment %} <label for="{{ form.occupancy.id_for_label }}" class="block font-bold text-gray-700">
+                        {{ form.occupancy|add_asterisk|safe }}
+                    </label> {% endcomment %}
+                    {{ form.occupancy|as_crispy_field }}
+                </div>
+                <div>                    
+                    {{form.credit_score|as_crispy_field}}
+                </div>
+                <div>                    
+                    {{form.commitment_period|as_crispy_field}}
+                </div>
+            </div>
+
+            <br>
+
+            <div class="grid grid-cols-4 gap-4">
+                <div>                    
+                    {{form.company|as_crispy_field}}
+                </div>
+                <div>                    
+                    {{form.property_type|as_crispy_field}}
+                </div>
+                <div>                    
+                    {{form.monthly_income|as_crispy_field}}
+                </div>
+                <div>                    
+                    {{form.comp_payer_type|as_crispy_field}}
+                </div>
+            </div>
+
+            <br>
+
+            <div class="grid grid-cols-4 gap-4">
+                <div>                    
+                    {{form.loan_officer|as_crispy_field}}                    
+                </div>
+                <div>                    
+                    {{form.number_units|as_crispy_field}}
+                </div>
+                <div>                    
+                    {{form.monthly_debt|as_crispy_field}}
+                </div>
+                <div>                    
+                    {{form.documentation_type|as_crispy_field}}
+                </div>
+            </div>
+
+            <br>
+
+            <div class="grid grid-cols-4 gap-4">
+                <div>                    
+                    {{form.borrower_name|as_crispy_field}}                    
+                </div>
+                <div>                    
+                    {{form.property_state|as_crispy_field}}
+                </div>
+                <div class="checkbox-inline pt-8">                    
+                    {{form.dti|as_crispy_field}}
+                </div>
+                <div>                    
+                    {{form.escrow_impound|as_crispy_field}}
+                </div>
+            </div>
+
+            <br>
+
+            <div class="grid grid-cols-4 gap-4">
+                <div>                    
+                    {{form.loan_type|as_crispy_field}}                    
+                </div>
+                <div>                    
+                    {{form.zip_code|as_crispy_field}}
+                </div>
+                <div>                    
+                    {{form.taxes|as_crispy_field}}
+                </div>
+                <div>                    
+                    {{form.loan_term|as_crispy_field}}
+                </div>
+            </div>
+
+            <br>
+
+            <div class="grid grid-cols-4 gap-4">
+                <div>                    
+                    {{form.buydown_type|as_crispy_field}}                    
+                </div>
+                <div>                    
+                    {{form.county|as_crispy_field}}
+                </div>
+                <div>                    
+                    {{form.hoi|as_crispy_field}}
+                </div>
+                <div>                    
+                    {{form.flex_term|as_crispy_field}}
+                </div>
+            </div>
+
+            <br>
+
+            <div class="grid grid-cols-4 gap-4">
+                <div>                    
+                    {{form.prepayment_penalty|as_crispy_field}}                    
+                </div>
+                <div>                    
+                    {{form.financed_properties|as_crispy_field}}
+                </div>
+                <div>                    
+                    {{form.finance_charges|as_crispy_field}}
+                </div>
+                <div>                    
+                    {{form.title_selection|as_crispy_field}}
+                </div>
+            </div>
+
+            <br>
+
+            <div class="grid grid-cols-4 gap-4">
+                <div>                    
+                    {{form.loan_amount|as_crispy_field}}                    
+                </div>
+                <div>                    
+                    
+                </div>
+                <div class="checkbox-inline pt-8">                    
+                    {{form.new_construction|as_crispy_field}}
+                </div>
+                <div>                    
+                    {{form.first_homebuyer|as_crispy_field}}
+                </div>
+            </div>
+
+            <br>
+
+            <div class="grid grid-cols-4 gap-4">
+                <div>                    
+                    {{form.second_loan_amount|as_crispy_field}}                    
+                </div>
+                <div>                    
+                    
+                </div>
+                <div class="checkbox-inline pt-8">                    
+                    {{form.self_employed|as_crispy_field}}
+                </div>
+                <div>                    
+                    
+                </div>
+            </div>
+
+            <br>
+
+            <div class="grid grid-cols-4 gap-4">
+                <div>                    
+                                       
+                </div>
+                <div>                    
+                    
+                </div>
+                <div class="checkbox-inline pt-8">                    
+                    {{form.rural_property|as_crispy_field}}
+                </div>
+                <div>                    
+                    
+                </div>
+            </div>
+            <a href="{% url 'dashboard' %}" class="mt-4 bg-red-500 text-white py-2 px-4 rounded">Back</a>
+            <button type="submit" class="mt-4 bg-blue-500 text-white py-2 px-4 rounded">Submit</button>
+        </form>   
+        
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'webapp/base.html' %}
+
+{% block content %}
+
+    <div class="text-center">
+        
+        <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-block" type="button" href="{% url 'lender-entry' %}">
+            Lender Entry &nbsp;
+        </a>
+
+        <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-block" type="button" href="{% url 'lender-results' %}">
+            Lender Results &nbsp;
+        </a>
+
+    </div>
+
+{% endblock %}

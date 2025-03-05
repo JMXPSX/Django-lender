@@ -1,0 +1,30 @@
+{% extends 'webapp/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+    <body>
+
+        <div class="container mx-auto max-w-screen-sm bg-gray-100 shadow-md p-5 form-layout">
+            <h3> Login to your account </h3>
+
+            <hr>
+            <br>
+
+            <form method="POST" autocomplete="off">
+                {% csrf_token %}
+                {{form.username|as_crispy_field}}
+                <br>
+                {{form.password|as_crispy_field}}
+                <br>
+                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 w-full flex items-center justify-center rounded">
+                    Login &nbsp; <i class="fa fa-key" aria-hidden="true"></i>
+                </button>                
+            </form>
+        </div>
+
+
+    </body>
+
+{% endblock %}

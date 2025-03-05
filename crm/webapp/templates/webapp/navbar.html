@@ -1,0 +1,42 @@
+<nav class="bg-blue-500 flex flex-col items-start p-4">
+
+    <a class="text-white font-bold text-lg" href="{% url '' %}">           
+      &nbsp; Loan Management      
+    </a>
+
+    <div class="hidden lg:flex justify-center" id="navbarNavDropdown">
+        <ul class="flex lg:flex-row items-center lg:mr-auto">
+            &nbsp;     &nbsp;     &nbsp;
+            {% if user.is_authenticated %}
+
+            <li class="list-none">          
+                <a class="text-white hover:text-gray-300 px-4 py-2 inline-block" href="{% url 'dashboard' %}">
+                    Dashboard &nbsp; <i class="fa fa-home" aria-hidden="true"></i> 
+                </a>    
+            </li>    
+            &nbsp;     &nbsp;     &nbsp;    
+            <li class="list-none">    
+                <a class="text-white hover:text-gray-300 px-4 py-2 inline-block" href="{% url 'logout' %}">
+                    Sign out &nbsp; <i class="fa fa-sign-out" aria-hidden="true"></i> 
+                </a>    
+            </li>
+                
+            {% else %}
+                
+            <li class="list-none">        
+                <a class="text-white hover:text-gray-300 px-4 py-2 inline-block" href="{% url 'register' %}"> 
+                    Register 
+                </a>          
+            </li>
+            &nbsp;     &nbsp;     &nbsp;      
+            <li class="list-none">        
+                <a class="text-white hover:text-gray-300 px-4 py-2 inline-block" href="{% url 'login' %}"> 
+                    Login 
+                </a>        
+            </li>
+                
+            {% endif %}
+        </ul>        
+    </div>
+
+</nav>
